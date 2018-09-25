@@ -1,0 +1,12 @@
+.img-circle {
+    margin-top: 1%;
+    border-radius: 50%;
+}
+
+p {
+  font-size: 1em;
+}
+
+#welcomeMsg {
+  margin-top: 1%;
+}
