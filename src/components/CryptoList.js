@@ -25,7 +25,7 @@ export default class CryptoList extends Component {
         crypto_price: data.ticker.price,
         markets: data.ticker.markets,
         crypto_currency: crypto_currency,
-        message: data.ticker.markets.length > 0 ? '' : 'Currently not supported'
+        message: data.ticker.markets.length > 0 ? '' : 'Not supported'
       })
     })
     .catch((e) => {
@@ -38,12 +38,12 @@ export default class CryptoList extends Component {
     fetch(this.state.url + this.state.crypto_currency + '-' + currency_val)
     .then(response => response.json())
     .then((data) => {
+      console.log(data);
       this.setState({
         crypto_name: data.ticker.base,
         crypto_price: data.ticker.price,
         markets: data.ticker.markets,
-        currency_type: currency_val,
-        message: data.ticker.markets.length > 0 ? '' : 'Currently not supported'
+        currency_type: currency_val
       })
     })
     .catch((e) => {
@@ -53,7 +53,7 @@ export default class CryptoList extends Component {
 
   render(){
     return (
-      <div id="Crypto" className="CryptoList" style={{display: 'none'}}>
+      <div id="Crypto" className="CryptoList">
       <div class="container" id="cryptoList">
       <div class="row">
       <div class="col-sm">
@@ -90,6 +90,7 @@ export default class CryptoList extends Component {
       </div>
       </div>
       <CryptoMarkets markets={this.state.markets}/>
+
 
       <p>{this.state.message}</p>
       </div>
