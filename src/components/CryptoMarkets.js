@@ -1,29 +1,51 @@
 import React, {Component} from 'react';
+import '../CryptoMarkets.css';
 
 class CryptoMarkets extends Component {
   render(){
     return(
       <div className="CryptoMarkets">
-      <div id="markets">
-
-      <ul class="btn btn">{this.props.markets.map((item, index) => (
-
-        <div class="card">
+      <div class="container">
+      <div class="row">
+      <div class="col-sm">
+      <div class="card">
+      <div class="card-header text-left">Market</div>
+      <div class="card-body">
+      <ul>{this.props.markets.map((item, index) => (
         <div class="row">
         <div class="col-sm">
-        <li class="list" key={'market'}>{item.market}</li>
-        </div>
-
-        <div class="col-sm">
-        <li class="list" key={'price'}>{item.price}</li>
+        <li class="list text-left breadcrumb" key={'market'}>{item.market}</li>
         </div>
         </div>
-        </div>
-
       ))}
       </ul>
       </div>
       </div>
+      </div>
+      <div class="col-sm">
+      <div class="card">
+      <div class="card-header text-left">Price</div>
+      <div id="markets">
+      <div class="card-body">
+      <ul>{this.props.markets.map((item, index) => (
+        <div class="row">
+        <div class="col-sm">
+        <li class="list text-left breadcrumb" key={'price'}>{item.price}</li>
+        </div>
+        </div>
+      ))}
+      </ul>
+      </div>
+      </div>
+      </div>
+      </div>
+      </div>
+      </div>
+      </div>
+
+
+
+
     );
   }
 }

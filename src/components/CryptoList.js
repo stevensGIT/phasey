@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import CryptoMarkets from './CryptoMarkets';
+import CryptoMarketsMobile from './CryptoMarketsMobile';
 import '../CryptoList.css';
 
 export default class CryptoList extends Component {
@@ -19,7 +20,6 @@ export default class CryptoList extends Component {
     fetch(this.state.url + crypto_currency + '-' + this.state.currency_type)
     .then(response => response.json())
     .then((data) => {
-      console.log(data.ticker.markets.length);
       this.setState({
         crypto_name: data.ticker.base,
         crypto_price: data.ticker.price,
@@ -38,7 +38,6 @@ export default class CryptoList extends Component {
     fetch(this.state.url + this.state.crypto_currency + '-' + currency_val)
     .then(response => response.json())
     .then((data) => {
-      console.log(data);
       this.setState({
         crypto_name: data.ticker.base,
         crypto_price: data.ticker.price,
@@ -90,8 +89,7 @@ export default class CryptoList extends Component {
       </div>
       </div>
       <CryptoMarkets markets={this.state.markets}/>
-
-
+      <CryptoMarketsMobile markets={this.state.markets}/>
       <p>{this.state.message}</p>
       </div>
     );
