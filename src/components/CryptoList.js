@@ -52,7 +52,7 @@ export default class CryptoList extends Component {
 
   render(){
     return (
-      <div id="Crypto" className="CryptoList">
+      <div id="Crypto" className="CryptoList" style={{display: 'none'}}>
       <div class="container" id="cryptoList">
       <div class="row">
       <div class="col-sm">

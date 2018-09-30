@@ -11,7 +11,7 @@ class CryptoMarketsMobile extends Component {
       <ul>{this.props.markets.map((item, index) => (
         <div class="row">
         <div class="col-sm">
-        <li class="list text-left breadcrumb" key={'market'}>{item.market} {item.price}</li>
+        <li class="list text-left breadcrumb" key={'market'}>Market: {item.market} Price: {item.price}</li>
         </div>
         </div>
       ))}

@@ -8,7 +8,8 @@ class UserProfile extends Component {
   state = {
     firstName : '',
     lastName : '',
-    loginStatus: ''
+    loginStatus: '',
+    avatar: ''
   }
 
   login = () => {
@@ -35,10 +36,12 @@ class UserProfile extends Component {
     if (response.status === 'connected'){
       cryptoComponent.removeAttribute('style');
       welcomeMsg.removeAttribute('style');
-      FB.api('/me?fields=first_name,last_name', (response) => {
+      FB.api('/me?fields=first_name,last_name,picture.width(100).height(100)', (response) => {
+        console.log(response);
         this.setState({
           firstName: response.first_name,
-          lastName: response.last_name
+          lastName: response.last_name,
+          avatar: response.picture.data.url
         })
       })
     } else {
@@ -47,7 +50,8 @@ class UserProfile extends Component {
       this.setState({
         loginStatus: '',
         firstName : '',
-        lastName: ''
+        lastName: '',
+        avatar: ''
       })
     }
 
@@ -56,6 +60,7 @@ class UserProfile extends Component {
   render(){
     return (
       <div className="UserProfile">
+      <UserData userData={this.state} />
       <div class="container">
       <div class="card">
       <div class="card-header">Authenticate</div>
@@ -67,7 +72,6 @@ class UserProfile extends Component {
       </div>
       </div>
       </div>
-      <UserData userData={this.state} />
       </div>
     );
   }

@@ -17,12 +17,16 @@
   display: none;
 }
 
+
 @media screen and (max-width: 600px) {
   .CryptoMarkets {
     display: none;
   }
   .CryptoMarketsMobile {
     display: block;
+    margin-top: 1%;
+  }
+  #logout {
     margin-top: 1%;
   }
 }

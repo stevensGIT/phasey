@@ -1,6 +1,5 @@
-.img-circle {
-    margin-top: 1%;
-    border-radius: 50%;
+.UserData {
+  margin-bottom: 1%;
 }
 
 p {
@@ -8,5 +7,16 @@ p {
 }
 
 #welcomeMsg {
-  margin-top: 1%;
+  margin-top: 5%;
+  font-size: 2em;
+}
+
+#avatar {
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+
+  -webkit-box-shadow: 0 0 0 3px #fff, 0 0 0 4px #999, 0 2px 5px 4px rgba(0,0,0,.2);
+  -moz-box-shadow: 0 0 0 3px #fff, 0 0 0 4px #999, 0 2px 5px 4px rgba(0,0,0,.2);
+  box-shadow: 0 0 0 3px #fff, 0 0 0 4px #999, 0 2px 5px 4px rgba(0,0,0,.2);
 }
